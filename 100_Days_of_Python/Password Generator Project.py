@@ -24,10 +24,11 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+# Create empty password list
 password_list = []
 
 for char in range(1, nr_letters + 1):
-  password_list.append(random.choice(letters))
+  password_list.append(random.choice(letters))# optional to use 'append'
 
 for char in range(1, nr_symbols + 1):
   password_list += random.choice(symbols)
@@ -35,11 +36,15 @@ for char in range(1, nr_symbols + 1):
 for char in range(1, nr_numbers + 1):
   password_list += random.choice(numbers)
 
+#check list
 print(password_list)
+# shuffle the list and recheck
 random.shuffle(password_list)
 print(password_list)
 
+#create empty string for the final password
 password = ""
+# loop through to create your new password
 for char in password_list:
   password += char
 

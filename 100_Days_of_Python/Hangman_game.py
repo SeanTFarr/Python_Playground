@@ -2,7 +2,6 @@
 import random
 import os
 
-
 #use the 'word_list' from hangman_words.py
 
 from hangman_words import word_list
@@ -12,6 +11,7 @@ chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 
 end_of_game = False
+
 lives = 6
 
 #Import the logo from hangman_art.py 
@@ -47,9 +47,7 @@ while not end_of_game:
         #If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
         print(f"{guess} is not in the word")
         lives -= 1
-        #Import the stages from hangman_art.py
-        from hangman_art import stages
-        print(stages[lives])
+
         if lives == 0:
             end_of_game = True
             print(f"You lose. The word was {chosen_word}")
@@ -61,4 +59,6 @@ while not end_of_game:
     if "_" not in display:
         end_of_game = True
         print("You win.")
-
+    #Import the stages from hangman_art.py
+    from hangman_art import stages
+    print(stages[lives])

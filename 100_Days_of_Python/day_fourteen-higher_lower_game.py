@@ -1,1 +1,2 @@
-#Day 14 - Higher Lower game
+#Day 14 - Higher Lower Game
+import random
